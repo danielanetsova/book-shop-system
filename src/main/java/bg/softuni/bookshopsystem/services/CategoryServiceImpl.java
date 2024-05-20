@@ -29,19 +29,19 @@ public class CategoryServiceImpl implements CategoryService {
         this.categoryRepository.saveAllAndFlush(categories);
     }
 
-//    @Override
-//    public Category getRandomCategory() {
-//        long categoriesCount = categoryRepository.count();
-//
-//        if(categoriesCount > 0) {
-//            long randomId = new Random().nextLong(1, categoriesCount + 1L);
-//            return categoryRepository
-//                    .findById(randomId)
-//                    .orElseThrow(() -> new IllegalArgumentException("No such category"));
-//        }
-//
-//        throw new RuntimeException();
-//    }
+   @Override
+   public Category getRandomCategory() {
+       long categoriesCount = categoryRepository.count();
+
+       if(categoriesCount > 0) {
+           long randomId = new Random().nextLong(1, categoriesCount + 1L);
+           return categoryRepository
+                   .findById(randomId)
+                   .orElseThrow(() -> new IllegalArgumentException("No such category"));
+       }
+
+       throw new RuntimeException();
+   }
 
     public Set<Category> getRandomCategories() {
         Set<Category> categories = new HashSet<>();
