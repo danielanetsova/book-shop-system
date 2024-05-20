@@ -76,15 +76,7 @@ public class SeedServiceImpl implements SeedService {
 
                     author.addBook(book); // добавяме книга на автора
                     authorService.updateAuthor(author); //ъпдейтваме автора в базата, тъй като сме му добавили книга
-                    // без CascadeType.MERGE гърми, защото реално още не сме добавили никакви книги в базата
-                    // а казваме че този автор има онази книга => добавяме CascadeType.MERGE в Author за да ни
-                    //създаде книга и да каже че този автор сочи към тази книга. Тоест автоматично ни се добавят книгите
-                    // в базата
-                    //CascadeType.MERGE: means that related entities are merged
-                    //into managed state when the owning entity is merged
-                    // Другият вариант е 1-во да си създадем книгите, за които е необходим автор и ги наливаме в базата.
-                    // Но проблемът е че authors_books в базата е празна, тъй като не добавяме книгите към
-                    // сета от книги на авторите и това се решава с идеята на гушко.
+                
                 });
 
         // идеята на гушко без CascadeType.MERGE в Author класа
