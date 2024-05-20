@@ -79,48 +79,11 @@ public class SeedServiceImpl implements SeedService {
                 
                 });
 
-        // идеята на гушко без CascadeType.MERGE в Author класа
-
-        // List<Author> authorsList = new ArrayList<>(); - да създадем лист в който да събираме рандъм авторите
-
-        // List<Book> books = Files.readAllLines(Path.of(RESOURCE_URL + BOOKS_FILE_NAME))
-        //                .stream()
-        //                .filter(s -> !s.isBlank())
-        //                .map(row -> {
-        //                    Author author = this.authorService.getRandomAuthor();
-        ////                  authorsList.add(author);
-        //                    Set<Category> categories = this.categoryService.getRandomCategories();
-        //                    String[] args = row.split("\\s+");
-        //                    String title = Arrays.stream(args).skip(5).collect(Collectors.joining(" "));
-        //                    EditionType editionType = EditionType.values()[Integer.parseInt(args[0])];
-        //                    AgeRestriction ageRestriction = AgeRestriction.values()[Integer.parseInt(args[4])];
-        //                    LocalDate releaseDate = LocalDate.parse(args[1], DateTimeFormatter.ofPattern("d/M/yyyy"));
-        //                    int copies = Integer.parseInt(args[2]);
-        //                    BigDecimal price = new BigDecimal(args[3]);
-        //
-        //                    Book book = new Book(title, editionType, price, copies,
-        //                            releaseDate, ageRestriction, author, categories);
-        //
-        //                    author.addBook(book);
-        //                    return book;
-        //                }).toList();
-        //
-        //				bookService.seedBooks(books);
-        //              authorService.updateAuthors(authorList);
-        // Тук идеята е че отново си добавяме книга на автора, а листът от автори пази референцията на обектите
-        // и след като вече книгите са запазени заедно с кореспондиращите им автори в базата тогава ъпдейтваме
-        // авторите в базата.
-
     }
 
     @Override
     public void seedCategories() throws IOException {
         if (this.categoryService.isDataSeeded()) return;
-
-        //Класът Files помага за четенето и писането на данни
-        //В стрийма трябва да се използваме isBlank, защото искаме и да премахнем null-стойностите
-        //isBlank проверява дали стрингът няма символи, спейсове и дали е null.
-        //isEmpty  проверява дали стрингът няма символи и спейсове.
 
         this.categoryService.seedCategories(
                 Files.
