@@ -26,69 +26,60 @@ public class ConsoleRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         seedService.seedAllData();
         //задачи от Spring Data intro ex
-        //задача 1
+        //Task 1
 //        bookService.getAllBooksAfterGivenYear(2000).forEach(book ->
 //                System.out.println(book.getTitle() + " -> " + book.getReleaseDate()));
 
-        //задача 2
+        //Task 2
 //        authorService.getAuthorsReleasedBooksBeforeGivenYear(2000)
 //                .forEach(author -> System.out.println(author.getFullName()));
 
-        //задача 3
+        //Task 3
 //        System.out.println(authorService.getAllAuthorsNamesAndBookCount());
 
-        //задача 4
+        //Task 4
 //        authorService.getBooksInfoByAuthorFullName("George", "Powell");
 
-        //задачи от Advanced Quering ex
-        //задача 1 -> Books Titles by Age Restriction
+        //Task 5 -> Books Titles by Age Restriction
         //bookService.findBooksByAgeRestriction("teEN").forEach(book -> System.out.println(book.getTitle()));
-        //тук ако не ми трябват книгите мога просто чрез query да взема заглавията и директно да ги върна
-
-        //задача 2 -> Golden Books
+       
+        //Task 6 -> Golden Books
 //        bookService.findGoldenEditionBookTitlesThatHaveCopiesLessThan(5000).forEach(System.out::println);
 
-        //задача 3 -> Books by Price
+        //Task 7 -> Books by Price
 //        bookService.printTitlesAndPricesLowerAndHigherThan(5, 40);
 
-        //задача 4 -> Not Released Books
+        //Task 8 -> Not Released Books
 //        bookService.printTitlesOfBooksNotReleasedInYear(1998);
 
-        //задача 5 -> Books Released Before Date
+        //Task 9 -> Books Released Before Date
 //        bookService.printBooksReleasedBeforeDate("30-12-1989");
 
-        //задача 6 -> Authors Search
+        //Task 10 -> Authors Search
 //        authorService.printAuthorFullNameEndingWith("dy");
 
-        //задача 7 -> Books Search
+        //Task 11 -> Books Search
 //        bookService.printBookTitlesContainingString("WOR");
 
-        //задача 8 -> Book Titles Search
+        //Task 12 -> Book Titles Search
 //        bookService.printTitlesAndAuthorsWithLastNameStarting("gr");
 
-        //задача 9 -> Count Books
+        //Task 13 -> Count Books
 //        bookService.printCountOfTitlesLongerThan(40);
 
-        //задача 10 -> Total Book Copies
+        //Task 14 -> Total Book Copies
 //        authorService.printTotalBookCopiesPerAuthor();
-//       // тази задача може и да се реши с интерфейс или клас това се налага, когато ни е необходимо да ни
-//          ни върне точно такъв тип. В случая просто трябва да изптинтим стринговете
 
-        //задача 11 ->  Reduced Book
-//        bookService.printBookInformation("Recalled to Life"); - попр ще ни върне 1 книга, но има и повтарящи се
-        //заглавия затова си го оставяме лист
+        //Task 15 ->  Reduced Book
+//        bookService.printBookInformation("Recalled to Life"); 
 
-        //задача 12 -> Increase Book Copies
+        //Task 16 -> Increase Book Copies
 //        System.out.println(bookService.returnTotalAddedCopiesOfBooksReleasedAfter("06 Jun 2013", 44));
 
-        //задача 13 -> Remove Books
-        //на тази задача за да изтрия книгата трябва да прекъсна връзката й с автора
-        //затова най доброто решение е да няма таблица authors_books защото и при наливането на книгите имаше проблеми
-        //в базата и сега има
-        //решение би било да се добави on delete cascade в самата база
+        //Task 17 -> Remove Books
 //        bookService.printCountOfDeletedBooksHavingCopiesLessThan(206);
 
-        //задача 14 -> Stored Procedure
+        //Task 18 -> Stored Procedure
         authorService.printCountOfBooksWrittenByAuthor("Amanda Rice");
     }
 }
