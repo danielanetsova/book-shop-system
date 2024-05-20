@@ -56,6 +56,5 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     @Transactional
     @Query("DELETE Book b WHERE b IN :books")
     int deleteBooksWithCopiesLessThan(List<Book> books);
-    //може и int deleteByCopiesLessThan(int amount) - когато се прави без @Query можем да изпуснем @Modifying
 
 }
